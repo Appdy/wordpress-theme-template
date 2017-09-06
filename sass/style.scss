@@ -14,4 +14,13 @@
  * Use it to make something cool, have fun, and share what you've learned with others.
  */
 
+/* for "content width" feature */
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
 
