@@ -37,10 +37,10 @@
   <div class="site-info">
     <?php
       // display credits
-// do_action( 'action_name' );
-?>
-  <span class="site-title"><a href="<?php echo esc_url( home_url( '/') ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-  <a href="<?php echo esc_url( __( '' ) ) ?>"
+      // do_action( 'action_name' );
+    ?>
+    <span class="site-title"><a href="<?php echo esc_url( home_url( '/') ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+    <a href="<?php echo esc_url( __( '' ) ) ?>"></a>
   </div><!-- .site-info -->
 
 
