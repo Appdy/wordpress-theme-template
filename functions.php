@@ -1,12 +1,10 @@
 <?php
 /**
-  * Short description for
-  *
-  * @package package
+  * @package Adventure Theme
   * @author Adam Faryna <adamfaryna@appdy.net>
   * @version 0.1
   * @copyright (C) 2017 Adam Faryna <adamfaryna@appdy.net>
-  * @license Proprietary
+  * @license GNU GPLv3.0
  */
 
 if ( ! function_exists( 'adventure_setup' ) ) :
