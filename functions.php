@@ -25,9 +25,9 @@ function adventure_setup() {
   add_theme_support( 'title-tag' );
 
   add_theme_support( 'custom-logo', array(
-    'height' => 240,
-    'width' => 240,
-    'flex-height' => true
+    'height'      => 240,
+    'width'       => 240,
+    'flex-height' => true,
   ) );
 
   add_theme_support( 'post-thumbnails' );
@@ -35,7 +35,7 @@ function adventure_setup() {
 
   register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'adventure' ),
-    'social' => __( 'Social Links Menu', 'adventure' )
+    'social'  => __( 'Social Links Menu', 'adventure' ),
   ) );
 }
 endif;
@@ -43,43 +43,43 @@ add_action( 'after_setup_theme', 'adventure_setup' );
 
 function adventure_widget_init() {
   register_sidebar( array(
-    'name' => __( 'Left Sidebar', 'adventure' ),
-    'id' => 'sidebar-1',
-    'description' => __( 'Add widgets here to appear in your left sidebar.', 'adventure' ),
+    'name'          => __( 'Left Sidebar', 'adventure' ),
+    'id'            => 'sidebar-1',
+    'description'   => __( 'Add widgets here to appear in your left sidebar.', 'adventure' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget' => '</section>',
-    'before_title' => '<h2 class="widget-title">',
-    'after_title' => '</h2>'
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
   ) );
 
   register_sidebar( array(
-    'name' => __( 'Right Sidebar', 'adventure' ),
-    'id' => 'sidebar-2',
-    'description' => __( 'Add widgets here to appear in your right sidebar.', 'adventure' ),
+    'name'          => __( 'Right Sidebar', 'adventure' ),
+    'id'            => 'sidebar-2',
+    'description'   => __( 'Add widgets here to appear in your right sidebar.', 'adventure' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget' => '</section>',
-    'before_title' => '<h2 class="widget-title">',
-    'after_title' => '</h2>'
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
   ) );
 
   register_sidebar( array(
-    'name' => __( 'Top Sidebar', 'adventure' ),
-    'id' => 'sidebar-3',
-    'description' => __( 'Apears at the top of the content of post and pages.', 'adventure' ),
+    'name'          => __( 'Top Sidebar', 'adventure' ),
+    'id'            => 'sidebar-3',
+    'description'   => __( 'Apears at the top of the content of post and pages.', 'adventure' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget' => '</section>',
-    'before_title' => '<h2 class="widget-title">',
-    'after_title' => '</h2>'
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
   ) );
 
   register_sidebar( array(
-    'name' => __( 'Bottom Sidebar', 'adventure' ),
-    'id' => 'sidebar-4',
-    'description' => __( 'Apears at the bottom of the content of post and pages.', 'adventure' ),
+    'name'          => __( 'Bottom Sidebar', 'adventure' ),
+    'id'            => 'sidebar-4',
+    'description'   => __( 'Apears at the bottom of the content of post and pages.', 'adventure' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget' => '</section>',
-    'before_title' => '<h2 class="widget-title">',
-    'after_title' => '</h2>'
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
   ) );
 }
 add_action( 'widgets_init', 'adventure_widget_init' );
