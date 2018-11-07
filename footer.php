@@ -1,22 +1,22 @@
 <?php
 /**
-  * @package Adventure Theme
-  * @author Adam Faryna <adamfaryna@appdy.net>
+  * @package LightGlass theme
+  * @author Adam Faryna
   * @version 0.1
-  * @copyright (C) 2017 Adam Faryna <adamfaryna@appdy.net>
-  * @license GNU GPLv3.0
+  * @copyright (C) 2018 Appdy LTD
+  * @license MIT
   */
 ?>
 
-  <footer id="colophon" class="site-footer" role="contentinfo">
-    <?php if ( has_nav_menu( 'primary' ) ) : ?>
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <?php if ( has_nav_menu( 'primary' ) ) : ?>
     <nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer PrimaryMenu', 'adventure' ); ?>">
-    <?php
-      wp_nav_menu( array(
-        'theme_location' => 'primary',
-        'menu_class'     => 'primary_menu',
-      ) );
-    ?>
+      <?php
+        wp_nav_menu( array(
+          'theme_location' => 'primary',
+          'menu_class'     => 'primary_menu',
+        ) );
+      ?>
     </nav><!-- .main-navigation -->
   <?php endif; ?>
 
@@ -44,4 +44,6 @@
   </div><!-- .site-info -->
 
 
-  </footer><!-- .site-footer -->
+</footer><!-- .site-footer -->
+
+<script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>

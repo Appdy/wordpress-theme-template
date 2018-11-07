@@ -1,13 +1,11 @@
 <?php
 /**
- * Short description for header.php
- *
- * @package Wordpress
- * @author Adam Faryna <adamfaryna@appdy.net>
- * @version 0.1
- * @copyright (C) 2017 Adam Faryna <adamfaryna@appdy.net>
- * @license GNU GPL v3.0
- */
+  * @package LightGlass theme
+  * @author Adam Faryna
+  * @version 0.1
+  * @copyright (C) 2018 Appdy LTD
+  * @license MIT
+  */
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -17,13 +15,16 @@
   <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <?php endif; ?>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"> -->
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
+<script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
+
 <div id="page" class="hfeed site">
   <div class="site-inner">
-    <a href="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'adventure' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'adventure' ); ?></a>
 
     <header id="masthead" class="site-header" role="banner">
       <div class="site-header-main">
@@ -74,6 +75,9 @@
         <?php endif; ?>
       </div><!-- .site-header-main -->
 
+      <!-- display top sidebar -->
+      <?php get_sidebar( 'sidebar-top' ); ?>
+
       <?php if ( get_header_image() ) : ?>
         <?php
           $custom_header_sizes = apply_filters( 'adventure_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
@@ -87,4 +91,3 @@
       </header><!-- .site-header -->
 
       <div id="content" class="site-content">
-

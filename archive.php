@@ -3,9 +3,9 @@
   * Short description for
   *
   * @package package
-  * @author devil <adamfaryna@appdy.net>
+  * @author Adam Faryna
   * @version 0.1
-  * @copyright (C) 2017 Adam Faryna <adamfaryna@appdy.net>
-  * @license GNU GPL v3.0
+  * @copyright (C) 2018 Appdy LTD
+  * @license MIT
   */
 ?>

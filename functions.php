@@ -1,20 +1,22 @@
 <?php
 /**
-  * @package Adventure Theme
-  * @author Adam Faryna <adamfaryna@appdy.net>
-  * @version 0.1
-  * @copyright (C) 2017 Adam Faryna <adamfaryna@appdy.net>
-  * @license GNU GPLv3.0
+ * Lightglass theme.
+ *
+ * @package Lightglass Theme
+ * @author Adam Faryna
+ * @version 0.1
+ * @copyright (C) 2017 Appdy LTD
+ * @license MIT
  */
 
-if ( ! function_exists( 'adventure_setup' ) ) :
+if ( ! function_exists( 'lightglass_setup' ) ) :
 
-function adventure_setup() {
+function lightglass_setup() {
 
   /*
    * Add theme specific translations.
    */
-  load_theme_textdomain( 'adventure' );
+  load_theme_textdomain( 'lightglass' );
 
   // Limit max assets width.
   // add_theme_support( 'content-width' );
@@ -34,18 +36,38 @@ function adventure_setup() {
   set_post_thumbnail_size( 1200, 9999 );
 
   register_nav_menus( array(
-    'primary' => __( 'Primary Menu', 'adventure' ),
-    'social'  => __( 'Social Links Menu', 'adventure' ),
+    'primary' => __( 'Primary Menu', 'lightglass' ),
+    'social'  => __( 'Social Links Menu', 'lightglass' ),
   ) );
 }
 endif;
-add_action( 'after_setup_theme', 'adventure_setup' );
+add_action( 'after_setup_theme', 'lightglass_setup' );
 
-function adventure_widget_init() {
+function lightglass_widget_init() {
   register_sidebar( array(
-    'name'          => __( 'Left Sidebar', 'adventure' ),
-    'id'            => 'sidebar-1',
-    'description'   => __( 'Add widgets here to appear in your left sidebar.', 'adventure' ),
+    'name'          => __( 'Left Sidebar', 'lightglass' ),
+    'id'            => 'sidebar-left',
+    'description'   => __( 'Add widgets here to appear in your left sidebar.', 'lightglass' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
+
+  register_sidebar( array(
+    'name'          => __( 'Right Sidebar', 'lightglass' ),
+    'id'            => 'sidebar-right',
+    'description'   => __( 'Add widgets here to appear in your right sidebar.', 'lightglass' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
+
+  register_sidebar( array(
+    'name'          => __( 'Top Sidebar', 'lightglass' ),
+    'id'            => 'sidebar-top',
+    'description'   => __( 'Apears at the top of the content of post and pages.', 'lightglass' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h2 class="widget-title">',
@@ -53,43 +75,23 @@ function adventure_widget_init() {
   ) );
 
   register_sidebar( array(
-    'name'          => __( 'Right Sidebar', 'adventure' ),
-    'id'            => 'sidebar-2',
-    'description'   => __( 'Add widgets here to appear in your right sidebar.', 'adventure' ),
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-  ) );
-
-  register_sidebar( array(
-    'name'          => __( 'Top Sidebar', 'adventure' ),
-    'id'            => 'sidebar-3',
-    'description'   => __( 'Apears at the top of the content of post and pages.', 'adventure' ),
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-  ) );
-
-  register_sidebar( array(
-    'name'          => __( 'Bottom Sidebar', 'adventure' ),
-    'id'            => 'sidebar-4',
-    'description'   => __( 'Apears at the bottom of the content of post and pages.', 'adventure' ),
+    'name'          => __( 'Bottom Sidebar', 'lightglass' ),
+    'id'            => 'sidebar-bottom',
+    'description'   => __( 'Apears at the bottom of the content of post and pages.', 'lightglass' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h2 class="widget-title">',
     'after_title'   => '</h2>',
   ) );
 }
-add_action( 'widgets_init', 'adventure_widget_init' );
+add_action( 'widgets_init', 'lightglass_widget_init' );
 
-function adventure_scripts() {
-  wp_enqueue_style( 'adventure-style', get_stylesheet_uri() );
+function lightglass_scripts() {
+  wp_enqueue_style( 'lightglass-style', get_stylesheet_uri(), [], '1.0' );
 }
-add_action( 'wp_enqueue_scripts', 'adventure_scripts' );
+add_action( 'wp_enqueue_scripts', 'lightglass_scripts' );
 
-function adventure_body_classes( $classes ) {
+function lightglass_body_classes( $classes ) {
   if ( is_multi_author() ) {
     $classes[] = 'group-blog';
   }
@@ -104,7 +106,7 @@ function adventure_body_classes( $classes ) {
 
   return $classes;
 }
-add_action( 'body_class', 'adventure_body_classes' );
+add_action( 'body_class', 'lightglass_body_classes' );
 
 require get_template_directory() . '/inc/template-tags.php';
 

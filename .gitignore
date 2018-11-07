@@ -2,3 +2,7 @@ node_modules
 .vimrc
 yarn.lock
 Netrw*
+/styles.css
+/modernizr-*
+
+*.map
